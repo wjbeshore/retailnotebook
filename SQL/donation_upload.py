@@ -25,26 +25,12 @@ stores = {}
 result = result[11:]
 result = result[:-3]
 
-Months = {
-        "1": "Jan",
-        "2": "Feb",
-        "3": "Mar",
-        "4": "Apr",
-        "5": "May",
-        "6": "June",
-        "7": "July",
-        "8": "Aug",
-        "9": "Sep",
-        "10": "Oct",
-        "11": "Nov",
-        "12": "Dec"
-         }
 
 date_index = result[1][5].split("/")
+date = date_index[2] + "-" + date_index[0] + "-01"
+print(date)
 
-date = Months[date_index[0]] + date_index[2][2:]
 
-date_index = [date_index[0], date_index[2]]
 current_store = ""
 for row in result:
     if row[0] == "Donor Total":
@@ -93,7 +79,7 @@ for each in store_totals:
             temp_vals.append(0)
     val.append((str(each), date, temp_vals[0], temp_vals[1], temp_vals[2], temp_vals[3], temp_vals[4]))
 
-print(val)
+# print(val)
 
 
 
